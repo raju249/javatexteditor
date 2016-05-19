@@ -76,16 +76,17 @@ public class MyLinkedList<E> extends AbstractList<E> {
 		if ((index < 0 || index > size - 1) && (index != 0 || size != 0)) {
 			throw new IndexOutOfBoundsException("Invalid index input!!");
 		}
-		LLNode<E> newNode = new LLNode<E>(element);
+		
+		LLNode<E> nodeToAdd = new LLNode<E>(element);
 		LLNode<E> nodeAtIndex = head;
-		for(int i = 0; i <= index; i++){
+		for (int i = 0; i <= index; i++) {
 			nodeAtIndex = nodeAtIndex.next;
 		}
 		LLNode<E> prev = nodeAtIndex.prev;
-		newNode.prev = prev;
-		newNode.next = nodeAtIndex;
-		nodeAtIndex.prev = newNode;
-		prev.next = newNode;
+		prev.next = nodeToAdd;
+		nodeToAdd.prev = prev;
+		nodeToAdd.next = nodeAtIndex;
+		nodeAtIndex.prev = nodeToAdd;
 		size++;
 	}
 
