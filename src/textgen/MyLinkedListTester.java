@@ -194,7 +194,7 @@ public class MyLinkedListTester {
 		
 		shortList.add(1, "C");
 		assertEquals("AddAtIndex: check value is correct ", (String)"C", shortList.get(1));
-		assertEquals("AddAtIndex: check size is correct", 3, shortList.size());
+		assertEquals("AddAtIndex: check size is correct", 4, shortList.size() + 1);
 	}
 	
 	/** Test setting an element in the list */
